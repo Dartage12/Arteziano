@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arteziano доставка воды</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <!-- Иконка бургера -->
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Пункты меню -->
+        <div class="nav-links" id="nav-links">
+            <a href="#mobile-app">Мобильное приложение</a>
+            <a href="#company">Компания</a>
+            <a href="#delivery">Доставка</a>
+            <a href="#payment">Оплата</a>
+            <a href="#promotion">Акция</a>
+            <a href="#services">Услуги</a>
+            <a href="#support">Поддержка</a>
+            <a href="tel:84959213434">8 495 921-34-34</a>
+            <a href="#callback" class="callback-button">Заказать звонок</a>
+        </div>
+        <!-- Логотип -->
+        <div class="logo">
+            <img src="/images/logo.png" alt="Arteziano">
+        </div>
+        <!-- Корзина с товарами -->
+        <div class="cart-icon" id="cart-icon">
+            <span id="cart-count">0</span> <!-- Количество товаров в корзине -->
+            <a href="#" class="cart-button">🛒</a>
+        </div>        
+    </nav>
+    
+    
+
+    <!-- Слайдер -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide active">
+                    <img src="/images/slide1.png" alt="Вода Байкал">
+                    <div class="slider-caption">Премиальная вода озера Байкал</div>
+                </div>
+                <div class="slide">
+                    <img src="/images/slide2.png" alt="Кулеры">
+                    <div class="slider-caption">Профессиональные кулеры для воды</div>
+                </div>
+                <div class="slide">
+                    <img src="/images/slide3.png" alt="Доставка">
+                    <div class="slider-caption">Быстрая доставка по Москве</div>
+                </div>
+            </div>
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+            <div class="dots-container"></div>
+        </div>
+    </div>
+
+    <!-- Форма заказа звонка -->
+    <div id="callback-modal" class="callback-modal">
+        <div class="callback-form">
+            <span id="close-modal" class="close-modal">&times;</span>
+            <h3>Заказать звонок</h3>
+            <form id="callback-form">
+                <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                <input type="text" id="phone" name="phone" placeholder="Номер телефона" required>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>    
+
+    <!-- Модальное окно корзины -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <span class="close-cart" id="close-cart">&times;</span>
+            <h2>Ваша корзина</h2>
+            <ul class="cart-list">
+                <!-- Товары в корзине будут добавляться сюда -->
+            </ul>
+            <div class="cart-total">
+                <p>Общая сумма: <span id="cart-total">0 ₽</span></p>
+                <button id="checkout-button">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно оформления заказа -->
+    <div class="order-modal" id="order-modal">
+        <div class="order-content">
+            <span class="close-order" id="close-order">&times;</span>
+            <h2>Оформить заказ</h2>
+            <form id="order-form">
+                <label for="customer-name">Ваше имя:</label>
+                <input type="text" id="customer-name" name="name" required placeholder="Введите ваше имя">
+                
+                <label for="customer-phone">Номер телефона:</label>
+                <input type="text" id="customer-phone" name="phone" required placeholder="Введите номер телефона">
+                
+                <label for="delivery-address">Адрес доставки:</label>
+                <input type="text" id="delivery-address" name="address" required placeholder="Введите адрес доставки">
+                
+                <button type="submit">Подтвердить заказ</button>
+            </form>
+            <p id="order-message">Наш оператор с вами свяжется в ближайшее время для подтверждения заказа.</p>
+        </div>
+    </div>
+
+    <!-- Товары -->
+    <section class="products">
+    <h2>Наши товары</h2>
+    <div class="product-list">
+        <!-- Бутылка 19л -->
+        <div class="product-card">
+            <img src="/images/bottle.jpg" alt="Бутылка 19л">
+            <h3>Бутылка 19 литров</h3>
+            <p>Чистая питьевая вода в бутылке 19 литров. Идеально для дома и офиса.</p>
+            <p class="price">300 ₽</p>
+            <p>*Окончательная цена бутылки с доставкой обсуждается с оператором</p>
+            <button class="buy-button">Купить</button>
+        </div>
+
+        <!-- Помпа -->
+        <div class="product-card">
+            <img src="/images/pompa.jpg" alt="Помпа">
+            <h3>Помпа для воды</h3>
+            <p>Удобная помпа для розлива воды из бутылок 19 литров.</p>
+            <p class="price">500 ₽</p>
+            <button class="buy-button">Купить</button>
+        </div>
+
+        <!-- Электрическая помпа -->
+        <div class="product-card">
+            <img src="/images/bottle.jpg" alt="Электрическая помпа">
+            <h3>Электрическая помпа</h3>
+            <p>Современная электрическая помпа для легкого розлива воды.</p>
+            <p class="price">1200 ₽</p>
+            <button class="buy-button">Купить</button>
+        </div>
+
+        <!-- Кулер 1 -->
+        <div class="product-card">
+            <img src="/images/bottle.jpg" alt="Кулер 1">
+            <h3>Кулер для воды</h3>
+            <p>Кулер для воды с охлаждением и нагревом.</p>
+            <p class="price">2500 ₽</p>
+            <button class="buy-button">Купить</button>
+        </div>
+
+        <!-- Кулер 2 -->
+        <div class="product-card">
+            <img src="/images/bottle.jpg" alt="Кулер 2">
+            <h3>Кулер для воды</h3>
+            <p>Простой и удобный кулер для вашего офиса.</p>
+            <p class="price">2200 ₽</p>
+            <button class="buy-button">Купить</button>
+        </div>
+
+        <!-- Кулер 3 -->
+        <div class="product-card">
+            <img src="/images/bottle.jpg" alt="Кулер 3">
+            <h3>Кулер для воды</h3>
+            <p>Эффективный кулер для дома и офиса.</p>
+            <p class="price">2400 ₽</p>
+            <button class="buy-button">Купить</button>
+        </div>
+
+        <!-- Кулер 4 -->
+        <div class="product-card">
+            <img src="/images/bottle.jpg" alt="Кулер 4">
+            <h3>Кулер для воды</h3>
+            <p>Кулер с фильтрацией и охлаждением воды.</p>
+            <p class="price">2800 ₽</p>
+            <button class="buy-button">Купить</button>
+        </div>
+
+        <!-- Кулер 5 -->
+        <div class="product-card">
+            <img src="/images/bottle.jpg" alt="Кулер 5">
+            <h3>Кулер для воды</h3>
+            <p>Мощный кулер для воды для больших помещений.</p>
+            <p class="price">3000 ₽</p>
+            <button class="buy-button">Купить</button>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- Характеристики товаров -->
+    <section class="features">
+        <h2>Характеристики</h2>
+        <div class="feature-list">
+            <div class="feature-card">
+                <h3>Бутылка 19 литров</h3>
+                <ul>
+                    <li>Объем: 19 литров</li>
+                    <li>Материал: пищевой пластик</li>
+                    <li>Тип воды: питьевая</li>
+                    <li>Срок годности: 12 месяцев</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h3>Помпа для воды</h3>
+                <ul>
+                    <li>Тип: механическая</li>
+                    <li>Материал: пластик</li>
+                    <li>Подходит для бутылок 19 литров</li>
+                    <li>Простота в использовании</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews">
+        <h2>Отзывы</h2>
+        <div class="review-list">
+            <div class="review-card">
+                <p>"Отличная вода, всегда свежая и вкусная. Доставка быстрая!"</p>
+                <p class="author">- Иван Петров</p>
+            </div>
+            <div class="review-card">
+                <p>"Помпа очень удобная, теперь не нужно поднимать тяжелые бутылки."</p>
+                <p class="author">- Мария Иванова</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contacts">
+        <h2>Контакты</h2>
+        <p>Телефон: <a href="tel:84959213434">8 495 921-34-34</a></p>
+        <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+        <p>Адрес: Москва, ул. Примерная, д. 123</p>
+    </section>
+
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
